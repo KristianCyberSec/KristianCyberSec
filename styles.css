@@ -45,199 +45,37 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Full-screen sections */
-.full-screen {
-    height: 100vh; /* Full-screen height */
+/* Flexbox Layout for Welcome and Recent Updates */
+#welcome-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    scroll-snap-align: start;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
-}
-
-/* Smooth scrolling between sections */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Glowing Text for headings */
-h1, h2 {
-    color: white;
-    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
+    margin-top: 60px; /* To avoid overlap with the navigation bar */
 }
 
 /* Welcome Section */
 #welcome {
-    background-color: black;
-    color: white;
+    text-align: left;
+    width: 60%; /* Takes 60% of the container width */
+    padding-left: 50px;
 }
 
-/* About Me Section */
-#about {
-    background-color: white;
-    padding: 40px;
-    margin: 20px auto;
-    border-radius: 5px;
-    max-width: 800px;
-    text-align: center;
-}
-
-#about img {
-    border-radius: 50%;
-    margin-bottom: 20px;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5); /* Add glow to the image */
-}
-
-/* Recent Updates Section */
-#recent-updates {
-    background-color: #f8f9fa;
-    padding: 20px;
-    margin: 40px auto;
-    border-radius: 5px;
-    max-width: 800px;
-    text-align: center;
-}
-
-#recent-updates h2 {
-    font-size: 24px;
-    color: #333;
-}
-
-#recent-updates ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#recent-updates li {
-    margin: 10px 0;
-}
-
-#recent-updates a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-#recent-updates a:hover {
-    text-decoration: underline;
-}
-
-/* Image Circle */
-.image-circle {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.3);
-    margin: 20px auto;
-}
-
-.image-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: black;
-    color: white;
-}
-
-footer a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-/* Styling the body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth; /* Enables smooth scrolling */
-}
-
-/* Navigation Menu Styling */
-nav ul {
-    list-style-type: none;
-    background-color: #333;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    background-color: #007bff;
-    border-radius: 4px;
-}
-
-nav ul li a:hover {
-    background-color: #0056b3;
-}
-
-/* Full-screen sections */
-.full-screen {
-    height: 100vh; /* Full-screen height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    scroll-snap-align: start;
-    padding: 20px;
-}
-
-/* Smooth scrolling between sections */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Glowing Text for headings */
-h1, h2 {
-    color: white;
-    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
-}
-
-/* Adjust CyberSec Heading (slightly to the right) */
 #welcome h1 {
-    text-align: left; /* Aligns the heading */
-    padding-left: 100px; /* Moves it slightly to the right */
+    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
+    padding-left: 20px; /* Moves heading slightly to the right */
+}
+
+#welcome p {
+    color: #ccc; /* Lighter text for the subheading */
 }
 
 /* Recent Updates Section */
 #recent-updates {
     background-color: #f8f9fa;
     padding: 20px;
-    margin: 40px 0;
     border-radius: 5px;
-    max-width: 500px; /* Adjusted width */
-    text-align: left;  /* Align text to the left */
-    position: absolute; /* Position it */
-    top: 60%; /* Adjust top position to below the welcome text */
-    left: 5%; /* Move to the left side */
+    width: 30%; /* Takes 30% of the container width */
 }
 
 #recent-updates h2 {
