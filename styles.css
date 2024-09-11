@@ -8,7 +8,7 @@
 /* Styling the body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #000000;
     color: #333;
     margin: 0;
     padding: 0;
@@ -45,37 +45,43 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Flexbox Layout for Welcome and Recent Updates */
+/* Center Welcome Section */
 #welcome-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    margin-top: 60px; /* To avoid overlap with the navigation bar */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
 }
 
-/* Welcome Section */
 #welcome {
-    text-align: left;
-    width: 60%; /* Takes 60% of the container width */
-    padding-left: 50px;
+    width: 100%;
 }
 
 #welcome h1 {
     text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
-    padding-left: 20px; /* Moves heading slightly to the right */
 }
 
 #welcome p {
     color: #ccc; /* Lighter text for the subheading */
+    margin-top: 10px;
 }
 
-/* Recent Updates Section */
+/* Position Recent Updates Section below and to the left */
+#recent-updates-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns to the left */
+    width: 80%;
+    margin-top: 20px;
+}
+
 #recent-updates {
-    background-color: #f8f9fa;
+    background-color: #000000;
     padding: 20px;
     border-radius: 5px;
-    width: 30%; /* Takes 30% of the container width */
+    width: 300px; /* Adjusted width */
 }
 
 #recent-updates h2 {
@@ -100,23 +106,6 @@ nav ul li a:hover {
 
 #recent-updates a:hover {
     text-decoration: underline;
-}
-
-/* Image Circle */
-.image-circle {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.3);
-    margin: 20px auto;
-}
-
-.image-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* Footer Styling */

@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-
     <!-- Navigation Menu -->
     <header>
         <nav>
             <ul>
-                <li><a href="#welcome">Home</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="tryhackme.html">TryHackMe</a></li>
                 <li><a href="tcmsecurity.html">TCM Security</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
@@ -26,42 +24,30 @@
         </nav>
     </header>
 
-    <!-- Welcome Section -->
-    <section id="welcome" class="full-screen">
-        <div class="content">
+    <!-- Flexbox Container for Welcome and Recent Updates -->
+    <div id="welcome-container">
+        <!-- Welcome Section -->
+        <section id="welcome">
             <h1>Welcome to My CyberSec Journey</h1>
             <p>This website documents my journey in cybersecurity, covering TryHackMe, TCM Security, and more.</p>
-        </div>
-        <div class="image-circle">
-            <img src="yourphoto.jpg" alt="Photo of Kristian">
-        </div>
-    </section>
+        </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="full-screen">
-        <div class="content">
-            <h2>About Me</h2>
-            <p>Hi, I’m Kristian, a cybersecurity enthusiast. Here I document my progress in ethical hacking, cybersecurity, and my journey to becoming a professional in the field.</p>
+        <!-- Recent Updates Section -->
+        <div id="recent-updates-container">
+            <section id="recent-updates">
+                <h2>Recent Updates</h2>
+                <ul>
+                    <li><a href="blog.html#post1">Exploring Network Pentesting Techniques</a> - Posted on Sep 10, 2024</li>
+                    <li><a href="cyber-news.html#news1">New Vulnerability Found in IoT Devices</a> - Posted on Sep 9, 2024</li>
+                    <li><a href="projects.html#project1">Completed the Web Vulnerability Scanning Project</a> - Posted on Sep 5, 2024</li>
+                </ul>
+            </section>
         </div>
-    </section>
-
-    <!-- Recent Updates Section -->
-    <section id="recent-updates" class="full-screen">
-        <div class="content">
-            <h2>Recent Updates</h2>
-            <ul>
-                <li><a href="blog.html#post1">Exploring Network Pentesting Techniques</a> - Posted on Sep 10, 2024</li>
-                <li><a href="cyber-news.html#news1">New Vulnerability Found in IoT Devices</a> - Posted on Sep 9, 2024</li>
-                <li><a href="projects.html#project1">Completed the Web Vulnerability Scanning Project</a> - Posted on Sep 5, 2024</li>
-            </ul>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
     </footer>
-
-    <script src="hover.js"></script> <!-- Link to your JavaScript file -->
 </body>
-</html>
+
