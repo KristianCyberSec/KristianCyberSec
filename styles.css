@@ -8,8 +8,8 @@
 /* Styling the body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #333;
+    background-color: #000; /* Black background for better neon contrast */
+    color: #fff; /* White text for better contrast */
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; /* Enables smooth scrolling */
@@ -18,7 +18,7 @@ body {
 /* Navigation Menu Styling */
 nav ul {
     list-style-type: none;
-    background-color: #333;
+    background-color: #1a1a1a; /* Darker background for the navigation */
     padding: 10px;
     position: fixed;
     top: 0;
@@ -26,6 +26,7 @@ nav ul {
     z-index: 1000;
     display: flex;
     justify-content: center;
+    box-shadow: 0 0 10px 2px rgba(148, 0, 211, 0.5); /* Slight shadow for depth */
 }
 
 nav ul li {
@@ -34,60 +35,69 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ccc; /* Light text color */
     text-decoration: none;
     padding: 8px 16px;
-    background-color: #007bff;
+    background-color: #2e2e2e; /* Darker button background */
     border-radius: 4px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 nav ul li a:hover {
-    background-color: #0056b3;
+    background-color: #9400D3; /* Purple background on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 0 15px #9400D3, 0 0 20px #9400D3; /* Purple neon glow on hover */
 }
 
-/* Center Welcome Section */
-#welcome-container {
+/* Content Flexbox Container for Welcome, Recent Updates, and Image */
+#content-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between; /* Space between recent updates and image */
+    align-items: flex-start; /* Align content at the top */
     padding: 60px 20px;
-    margin-top: 50px;
+    margin-top: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Welcome Section */
 #welcome {
     width: 100%;
+    text-align: center;
 }
 
 #welcome h1 {
-    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
+    text-shadow: 0 0 20px #9400D3, 0 0 30px #9400D3, 0 0 40px #9400D3; /* Purple neon glow */
+    color: #fff;
+    font-size: 48px; /* Increased font size for Welcome heading */
 }
 
 #welcome p {
     color: #ccc; /* Lighter text for the subheading */
     margin-top: 10px;
+    font-size: 32px; /* Increased font size */
 }
 
-/* Position Recent Updates Section below and to the left */
+/* Recent Updates Section */
 #recent-updates-container {
     display: flex;
-    justify-content: flex-start; /* Aligns to the left */
-    width: 80%;
+    justify-content: space-between;
+    width: 100%;
     margin-top: 20px;
 }
 
 #recent-updates {
-    background-color: #000000;
+    background-color: #1a1a1a;
     padding: 20px;
     border-radius: 5px;
     width: 300px; /* Adjusted width */
 }
 
 #recent-updates h2 {
-    font-size: 24px;
-    color: #333;
-    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
+    font-size: 28px; /* Increased font size for Recent Updates heading */
+    color: #fff;
+    text-shadow: 0 0 20px #9400D3, 0 0 30px #9400D3, 0 0 40px #9400D3; /* Purple neon glow */
 }
 
 #recent-updates ul {
@@ -96,16 +106,66 @@ nav ul li a:hover {
 }
 
 #recent-updates li {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased space between items */
 }
 
 #recent-updates a {
     color: #007bff;
     text-decoration: none;
+    font-size: 20px; /* Increased font size for recent updates links */
 }
 
 #recent-updates a:hover {
     text-decoration: underline;
+    color: #9400D3; /* Hover color to match purple neon */
+}
+
+/* Image Section */
+#image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#image-section img {
+    max-width: 300px; /* Adjust width as necessary */
+    border-radius: 5px;
+    box-shadow: 0 0 20px #9400D3, 0 0 30px #9400D3, 0 0 40px #9400D3; /* Neon glow for the image */
+}
+
+/* About Me Section */
+#about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-me {
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+#about-me h2 {
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 0 0 20px #2e00d3, 0 0 30px #9400D3, 0 0 40px #9400D3; /* Purple neon glow */
+}
+
+#about-me p {
+    color: #ccc;
+    font-size: 26px;
+}
+
+/* Personal Image Section */
+#personal-image img {
+    max-width: 300px;
+    border-radius: 50%; /* Circular image */
+    box-shadow: 0 0 20px #3f00d3, 0 0 30px #9400D3, 0 0 40px #9400D3; /* Neon glow for the image */
 }
 
 /* Footer Styling */
@@ -124,4 +184,52 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+/* Style for matrix containers on the left and right sides */
+.matrix-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none; /* Ensures no interference with the main content */
+}
+
+/* Matrix effect for both sides */
+.matrix {
+    position: absolute;
+    top: 0;
+    width: 100px; /* Set width for matrix effect */
+    height: 100%;
+    overflow: hidden;
+    color: #00ff00; /* Classic green matrix color */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    opacity: 0.75;
+}
+
+/* Position matrix on the left and right */
+#matrix-left {
+    left: 0;
+}
+
+#matrix-right {
+    right: 0;
+}
+
+/* Create falling matrix animation */
+@keyframes matrixFall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.matrix div {
+    display: block;
+    white-space: nowrap;
+    animation: matrixFall 5s linear infinite;
 }

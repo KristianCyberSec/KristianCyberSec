@@ -24,8 +24,8 @@
         </nav>
     </header>
 
-    <!-- Flexbox Container for Welcome and Recent Updates -->
-    <div id="welcome-container">
+    <!-- Flexbox Container for Welcome, Recent Updates, and Image -->
+    <div id="content-container">
         <!-- Welcome Section -->
         <section id="welcome">
             <h1>Welcome to My CyberSec Journey</h1>
@@ -42,12 +42,41 @@
                     <li><a href="projects.html#project1">Completed the Web Vulnerability Scanning Project</a> - Posted on Sep 5, 2024</li>
                 </ul>
             </section>
+
+            <!-- Image Section -->
+            <section id="image-section">
+                <img src="vanlogo.webp" alt="Van Logo">
+            </section>
         </div>
     </div>
 
+    <!-- About Me and Image Section -->
+    <div id="about-container">
+        <!-- About Me Section -->
+        <section id="about-me">
+            <h2>About Me</h2>
+            <p>Hi, I'm Kristian, a cybersecurity enthusiast with a deep interest in ethical hacking, web security, and threat detection. My journey in cybersecurity involves learning and practicing with platforms like TryHackMe, TCM Security, and others. I strive to sharpen my skills as I work towards becoming a professional in the field.</p>
+        </section>
+
+        <!-- Personal Image Section -->
+        <section id="personal-image">
+            <img src="terror.webp" alt="Photo of Kristian">
+        </section>
+    </div>
+
+    <div class="matrix-container">
+        <div id="matrix-left" class="matrix"></div>
+        <div id="matrix-right" class="matrix"></div>
+    </div>
+    
     <!-- Footer Section -->
     <footer>
         <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
     </footer>
+<canvas id="matrixCanvasLeft"></canvas>
+<canvas id="matrixCanvasRight"></canvas>
+<script src="matrixEffect.js"></script>
+
 </body>
+</html>
 
