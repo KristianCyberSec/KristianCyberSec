@@ -12,6 +12,7 @@ body {
     color: #333;
     margin: 0;
     padding: 20px;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 /* Navigation Menu Styling */
@@ -19,10 +20,16 @@ nav ul {
     list-style-type: none;
     background-color: #333;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 10px;
 }
 
@@ -38,10 +45,27 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* Full-screen sections */
+.full-screen {
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Ensures snap scrolling */
+}
+
 /* Welcome Section */
 #welcome {
     text-align: center;
     padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+/* Glowing Text for headings */
+h1, h2 {
+    color: white;
+    text-shadow: 0 0 20px #00FFFF; /* Glowing effect */
 }
 
 /* About Me Section */
@@ -52,29 +76,25 @@ nav ul li a:hover {
     border-radius: 5px;
     max-width: 600px;
     text-align: center;
+    color: #333;
 }
 
 #about img {
     border-radius: 50%;
     margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5); /* Add glow to the image */
 }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-/* Style for Recent Updates Section */
+/* Recent Updates Section */
 #recent-updates {
     background-color: #f8f9fa;
     padding: 20px;
     margin: 20px 0;
     border-radius: 5px;
+    text-align: center;
 }
 
 #recent-updates h2 {
@@ -97,5 +117,40 @@ footer a {
 }
 
 #recent-updates a:hover {
+    text-decoration: underline;
+}
+
+/* Image Circle */
+.image-circle {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.3);
+    margin: 20px auto;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+footer a:hover {
     text-decoration: underline;
 }
