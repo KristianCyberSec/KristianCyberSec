@@ -69,3 +69,33 @@ footer a {
     color: #007bff;
     text-decoration: none;
 }
+/* Style for Recent Updates Section */
+#recent-updates {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#recent-updates h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+#recent-updates ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#recent-updates li {
+    margin: 10px 0;
+}
+
+#recent-updates a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#recent-updates a:hover {
+    text-decoration: underline;
+}
