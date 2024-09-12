@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity News</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your global CSS file -->
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -25,26 +25,36 @@
     </header>
 
     <!-- Cybersecurity News Section -->
-    <section id="news">
-        <h1>Cybersecurity News & Developments(examples)</h1>
-        <article id="news1">
-            <h2>New Vulnerability Found in IoT Devices</h2>
-            <p>Posted on Sep 9, 2024</p>
-            <p>A new critical vulnerability has been discovered in IoT devices, affecting millions of devices globally. Researchers are warning organizations to patch their systems immediately...</p>
-        </article>
+    <div id="news-container">
+        <!-- News 1 -->
+        <div class="news-card">
+            <img src="threat.webp" alt="News Image 1">
+            <div class="news-info">
+                <div class="news-date">
+                    <span>Thursday, September 5, 2024</span> <span class="news-tag">Cyber News</span>
+                </div>
+                <h2>Cybersecurity Threats Rising in 2024</h2>
+                <p>This month's report shows an increase in attacks targeting IoT devices and critical infrastructure...</p>
+            </div>
+        </div>
 
-        <article id="news2">
-            <h2>Zero-Day Exploit Detected in Popular Web Framework</h2>
-            <p>Posted on Sep 5, 2024</p>
-            <p>A zero-day exploit in a popular web development framework has been discovered. Security teams are advising immediate updates to secure web applications...</p>
-        </article>
+        <!-- News 2 -->
+        <div class="news-card">
+            <img src="cloud.webp" alt="News Image 2">
+            <div class="news-info">
+                <div class="news-date">
+                    <span>Thursday, August 1, 2024</span> <span class="news-tag">Cyber News</span>
+                </div>
+                <h2>New Security Measures in the Cloud</h2>
+                <p>Cloud providers are rolling out enhanced encryption and multifactor authentication to prevent unauthorized access...</p>
+            </div>
+        </div>
 
-        <!-- Add more articles as new developments occur -->
-    </section>
+        <!-- Add more news cards as needed -->
+    </div>
 
-    <!-- Footer -->
     <footer>
-        <p>Back to <a href="index.html">Home</a></p>
+        <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
     </footer>
 </body>
 </html>

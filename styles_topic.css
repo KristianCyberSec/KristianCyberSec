@@ -1,0 +1,106 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Matching the overall dark theme */
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Darker blue/gray background */
+    padding: 20px;
+    position: fixed;
+    height: auto; /* Not full height */
+    top: 100px; /* Adds space below the top navigation */
+}
+
+.sidebar h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #ecf0f1; /* Light text color for links */
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495e; /* Lighter blue/gray for hover */
+    padding-left: 10px;
+    transition: 0.3s ease;
+}
+
+/* Back Button Styling */
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #9400D3; /* Neon purple */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-shadow: 0 0 10px #9400D3, 0 0 20px #9400D3;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #7326D3; /* Darker hover effect */
+    text-shadow: 0 0 15px #9400D3, 0 0 30px #9400D3;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 270px; /* Space for the sidebar */
+    padding: 20px;
+    background-color: #313741; /* Unified background for content */
+    width: calc(100% - 270px); /* Remaining width for content */
+    min-height: 100vh; /* Ensures the main content area covers full height */
+    border-radius: 8px;
+    margin-top: 40px; /* Adds space between top nav and content */
+}
+
+.main-content h1, .main-content h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Links inside content */
+.main-content a {
+    color: #3498db; /* Blue color for content links */
+}
+
+.main-content a:hover {
+    text-decoration: underline;
+}

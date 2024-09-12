@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your global CSS file -->
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -25,27 +25,38 @@
     </header>
 
     <!-- Blog Section -->
-    <section id="blog">
-        <h1>Blog</h1>
-        <article id="post1">
-            <h2>Building my Website</h2>
-            <p>Posted on Sep 11, 2024</p>
-            <p>This is the first blog post and its dedicated to setting up of my first personal website!</p>
-        </article>
+    <div id="blog-container">
+        <!-- Blog Post 1 -->
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="terror.webp" alt="Photo of Blog Post 1">
+            </div>
+            <div class="post-content">
+                <h2>Blog Title 1</h2>
+                <p><strong>Date:</strong> September 2024</p>
+                <p>This is a brief excerpt of the blog post. It gives the readers a glimpse into what the post is about.</p>
+                <a href="blog-post1.html" class="read-more">READ MORE</a>
+            </div>
+        </div>
 
-        <article id="post2">
-            <h2>((EXAMPLE))</h2>
-            <h2>Why Ethical Hacking Matters</h2>
-            <p>Posted on Sep 1, 2024</p>
-            <p>Ethical hacking plays a crucial role in cybersecurity by helping organizations identify and fix vulnerabilities before malicious hackers can exploit them...</p>
-        </article>
+        <!-- Blog Post 2 -->
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="terror.webp" alt="Photo of Blog Post 2">
+            </div>
+            <div class="post-content">
+                <h2>Blog Title 2</h2>
+                <p><strong>Date:</strong> August 2024</p>
+                <p>This is a brief excerpt of the blog post. It gives the readers a glimpse into what the post is about.</p>
+                <a href="blog-post2.html" class="read-more">READ MORE</a>
+            </div>
+        </div>
 
-        <!-- Add more posts as needed -->
-    </section>
+        <!-- Add more blog posts as needed -->
+    </div>
 
-    <!-- Footer -->
     <footer>
-        <p>Back to <a href="index.html">Home</a></p>
+        <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
     </footer>
 </body>
 </html>
