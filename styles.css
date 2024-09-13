@@ -513,3 +513,60 @@ footer a:hover {
 .resume-link:hover {
     color: lightgreen; /* Optional for hover effect */
 }
+/* Burger menu styles */
+.burger-menu {
+    position: absolute;
+    top: 60px; /* Adjust this value to move the burger menu down */
+    left: 10px;
+}
+
+.burger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.topics-menu {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100px; /* Adjust the top value to position the dropdown lower */
+    left: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.topics-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.topics-menu ul li {
+    padding: 10px 0;
+}
+
+.topics-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.topics-menu ul li a:hover {
+    color: #a514c2;
+}
+.view-all-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.view-all-btn {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
