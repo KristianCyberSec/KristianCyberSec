@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCM Security Pathway</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your global CSS file -->
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    <!-- Your Firebase Configuration -->
+    <script src="scripts/firebase-auth.js"></script>
 </head>
 <body>
+    <!-- Check if the user is logged in -->
+    <script>
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                // Redirect to login page if not authenticated
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+
     <!-- Navigation Menu -->
     <header>
         <nav>
@@ -69,172 +86,6 @@
                 <li>Section Quiz</li>
             </ul>
         </div>
-
-        <!-- Setting Up Our Lab -->
-        <div class="topic">
-            <h2>Setting Up Our Lab</h2>
-            <ul>
-                <li>Installing VMWare / VirtualBox (6:15)</li>
-                <li>Configuring VirtualBox (3:16)</li>
-                <li>Installing Kali Linux (5:32)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Introduction to Linux -->
-        <div class="topic">
-            <h2>Introduction to Linux</h2>
-            <ul>
-                <li>Exploring Kali Linux (3:28)</li>
-                <li>Sudo Overview (5:12)</li>
-                <li>Navigating the File System (18:12)</li>
-                <li>Users and Privileges (16:54)</li>
-                <li>Common Network Commands (8:26)</li>
-                <li>Viewing, Creating, and Editing Files (6:21)</li>
-                <li>Starting and Stopping Services (6:17)</li>
-                <li>Installing and Updating Tools (11:53)</li>
-                <li>Scripting with Bash (22:34)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Introduction to Python -->
-        <div class="topic">
-            <h2>Introduction to Python</h2>
-            <ul>
-                <li>Introduction (2:19)</li>
-                <li>Strings (7:24)</li>
-                <li>Math (5:44)</li>
-                <li>Variables and Methods (10:20)</li>
-                <li>Functions (8:58)</li>
-                <li>Boolean Expressions and Relational Operators (8:33)</li>
-                <li>Conditional Statements (6:58)</li>
-                <li>Lists (12:12)</li>
-                <li>Tuples (2:11)</li>
-                <li>Looping (4:29)</li>
-                <li>Advanced Strings (12:39)</li>
-                <li>Dictionaries (6:24)</li>
-                <li>Importing Modules (5:58)</li>
-                <li>Sockets (7:39)</li>
-                <li>Building a Port Scanner (18:33)</li>
-                <li>User Input (8:38)</li>
-                <li>Reading and Writing Files (9:56)</li>
-                <li>Classes and Objects (7:51)</li>
-                <li>Building a Shoe Budget Tool (14:19)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- The Ethical Hacker Methodology -->
-        <div class="topic">
-            <h2>The Ethical Hacker Methodology</h2>
-            <ul>
-                <li>The Five Stages of Ethical Hacking (5:16)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Information Gathering (Reconnaissance) -->
-        <div class="topic">
-            <h2>Information Gathering (Reconnaissance)</h2>
-            <ul>
-                <li>Passive Reconnaissance Overview (7:32)</li>
-                <li>Identifying Our Target (3:33)</li>
-                <li>Discovering Email Addresses (15:48)</li>
-                <li>Gathering Breached Credentials with Breach-Parse (7:17)</li>
-                <li>Hunting Breached Credentials with DeHashed (11:55)</li>
-                <li>Hunting Subdomains Part 1 (5:31)</li>
-                <li>Hunting Subdomains Part 2 (4:48)</li>
-                <li>Identifying Website Technologies (7:06)</li>
-                <li>Information Gathering with Burp Suite (8:48)</li>
-                <li>Google Fu (5:31)</li>
-                <li>Utilizing Social Media (5:37)</li>
-                <li>Additional Learning (OSINT Fundamentals) (0:48)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Scanning & Enumeration -->
-        <div class="topic">
-            <h2>Scanning & Enumeration</h2>
-            <ul>
-                <li>Installing Kioptrix (6:17)</li>
-                <li>Scanning with Nmap (19:46)</li>
-                <li>Enumerating HTTP and HTTPS Part 1 (15:01)</li>
-                <li>Enumerating HTTP and HTTPS Part 2 (15:08)</li>
-                <li>Enumerating SMB (14:19)</li>
-                <li>Enumerating SSH (4:09)</li>
-                <li>Researching Potential Vulnerabilities (14:49)</li>
-                <li>Our Notes So Far (3:06)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Vulnerability Scanning with Nessus -->
-        <div class="topic">
-            <h2>Vulnerability Scanning with Nessus</h2>
-            <ul>
-                <li>Scanning with Nessus Part 1 (10:34)</li>
-                <li>Scanning with Nessus Part 2 (6:09)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Exploitation Basics -->
-        <div class="topic">
-            <h2>Exploitation Basics</h2>
-            <ul>
-                <li>Reverse Shells vs Bind Shells (7:00)</li>
-                <li>Staged vs Non-Staged Payloads (3:21)</li>
-                <li>Gaining Root with Metasploit (7:40)</li>
-                <li>Manual Exploitation (12:40)</li>
-                <li>Brute Force Attacks (7:49)</li>
-                <li>Credential Stuffing and Password Spraying (14:02)</li>
-                <li>Our Notes, Revisited (3:03)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- New Capstone -->
-        <div class="topic">
-            <h2>New Capstone</h2>
-            <ul>
-                <li>Introduction (5:42)</li>
-                <li>Set Up - Blue (3:56)</li>
-                <li>Walkthrough - Blue (17:00)</li>
-                <li>Set Up - Academy (2:24)</li>
-                <li>Walkthrough - Academy (44:19)</li>
-                <li>Walkthrough - Dev (25:20)</li>
-                <li>Walkthrough - Butler (36:18)</li>
-                <li>Walkthrough - Blackpearl (23:30)</li>
-            </ul>
-        </div>
-
-        <!-- Active Directory Overview -->
-        <div class="topic">
-            <h2>Active Directory Overview</h2>
-            <ul>
-                <li>Active Directory Overview (5:39)</li>
-                <li>Physical Active Directory Components (2:37)</li>
-                <li>Logical Active Directory Components (7:13)</li>
-                <li>Section Quiz</li>
-            </ul>
-        </div>
-
-        <!-- Active Directory Lab Build -->
-        <div class="topic">
-            <h2>Active Directory Lab Build</h2>
-            <ul>
-                <li>Lab Overview and Requirements (3:03)</li>
-                <li>Lab Build - (Cloud Alternative) (2:04)</li>
-                <li>Downloading Necessary ISOs (3:59)</li>
-                <li>Setting Up the Domain Controller (16:25)</li>
-                <li>Setting Up the User Machines (11:01)</li>
-                <li>Setting Up Users, Groups, and Policies (17:02)</li>
-                <li>Joining Our Machines to the Domain (12:06)</li>
-            </ul>
-        </div>
-        <!-- Post Exploitation and more can be added similarly -->
     </div>
 
     <footer>

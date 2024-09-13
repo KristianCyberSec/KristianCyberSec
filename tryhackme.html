@@ -32,40 +32,38 @@
 
     <!-- Topics Section -->
     <div id="tryhackme-container">
-        <!-- First Topic: Networking Fundamentals -->
-        <div class="topic">
-            <h2>Networking Fundamentals</h2>
-            <ul>
-                <li>Networking Basics</li>
-                <li>Linux Basics</li>
-                <li>Web Exploitation</li>
-                <li>Vulnerability Scanning</li>
-            </ul>
-        </div>
-
-        <!-- Second Topic: Linux Fundamentals(use this for others but change links) -->
-        
-    <div class="topic">
-         <h2>Linux Fundamentals</h2>
-         <ul>
-             <li><a href="linuxfundamentalsp1.html" class="topic-link">Linux Fundamentals Part 1</a></li>
-             <li><a href="linuxfundamentalsp2.html" class="topic-link">Linux Fundamentals Part 2</a></li>
-             <li><a href="linuxfundamentalsp3.html" class="topic-link">Linux Fundamentals Part 3</a></li>
-        </ul>
+        <!-- Content continues here -->
     </div>
 
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
 
-        <!-- Third Topic: Network Exploitation -->
-        <div class="topic">
-            <h2>Network Exploitation Basics</h2>
-            <ul>
-                <li>Introductory Networking</li>
-                <li>Nmap</li>
-                <li>Network Services</li>
-                <li>Network Services 2</li>
-            </ul>
-        </div>
-    </div>
+    <script type="module">
+        // Firebase configuration for your app
+        const firebaseConfig = {
+            apiKey: "AlzaSyAx-IM5C1Qx4T5tdeMP4n0TlO-iZLTxX7Q",
+            authDomain: "kristiancybersec.firebaseapp.com",
+            projectId: "kristiancybersec",
+            storageBucket: "kristiancybersec.appspot.com",
+            messagingSenderId: "635905897972",
+            appId: "1:635905897972:web:67a7d9a3f4c103efca75a1"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firebase Authentication and get a reference to the service
+        const auth = firebase.auth();
+
+        // Protect the page with authentication
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                // If not authenticated, redirect to login page
+                window.location.href = "login.html";
+            }
+        });
+    </script>
 
     <footer>
         <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
