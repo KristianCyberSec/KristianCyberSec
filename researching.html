@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researching</title>
+    <link rel="stylesheet" href="styles_topic.css"> <!-- New CSS file for these topic-specific pages -->
+    <link rel="stylesheet" href="styles.css"> <!-- Also include styles from homepage for top nav and effects -->
+</head>
+<body>
+    <!-- Top Navigation Menu (Same as Homepage) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="study-notes.html">Personal Study Notes</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books I've Read</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="cyber-news.html">Cybersecurity News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flexbox container for sidebar and main content -->
+    <div class="content-container">
+        <!-- Sidebar Navigation for Specific Topic Sections -->
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#learned">What I Learned</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#tips">Tips & Tricks</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <!-- Back Button -->
+            <button class="back-button" onclick="history.back()">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1 id="getting-started">Getting Started with Research</h1>
+            <p>Research is a crucial skill for becoming a better hacker. You can’t know everything, so learning how to research effectively is vital. You will often use Google to stay up to date with current trends, new hacks, and to learn about specific concepts in depth.</p>
+        
+            <p>For example, if you want to know what can be stored inside an image file, a quick search will reveal the concept of **steganography**, which involves hiding data within images. Further research might lead you to discover a tool called **Steghide**, which allows you to store and extract embedded data from images. By digging deeper, you’ll also find that Steghide can be installed using **apt**, a command-line tool for managing software packages on Ubuntu.</p>
+        
+            <p>Not sure what apt is? A quick search will explain that it’s a command-line tool used for installing, upgrading, and managing software packages on Ubuntu. To install a package like Steghide, you’d simply use the command <code>sudo apt-get install steghide</code>, and you’re good to go.</p>
+        
+            <p>Once you have Steghide installed, you can continue researching how to use it to extract hidden data from images. This process demonstrates the importance of research in hacking. You start with nothing, and through research, you gradually build up your knowledge. The ability to dive into unfamiliar topics and figure out solutions is essential to progressing in cybersecurity.</p>
+        
+            <h2 id="learned">What I Learned</h2>
+            <p>I learned how to break down big questions into smaller queries, gradually building an understanding. For example, researching **steganography** led me to tools like Steghide, and learning about **apt** helped me install packages efficiently. This allowed me to fully grasp how these tools work, from installation to actual use.</p>
+        
+            <p>Another significant takeaway was understanding how to make search queries more efficient. Initially, I would search broadly, but with practice, I learned to narrow my queries, target specific results, and utilise advanced search operators to filter the most relevant content.</p>
+        
+            <h2 id="challenges">Challenges I Faced</h2>
+            <p>The main challenge I faced was knowing where to start with vague questions. Learning to refine search queries and narrowing down results to find the most useful information was tough but rewarding. At times, I was overwhelmed by the volume of information online, and filtering through it for accurate, up-to-date, and relevant data was challenging. Balancing between general information and technical specifics was also a learning curve.</p>
+        
+            <p>Another challenge was understanding unfamiliar terminology or tools. Sometimes research uncovered new concepts or tools that required further exploration, which made it a multi-layered process. While overwhelming at first, the process became smoother with practice.</p>
+        
+            <h2 id="tips">Tips & Tricks</h2>
+            <p>Here are some useful strategies that helped me improve my research skills:</p>
+            <ul>
+                <li>**Break questions into smaller parts**: Instead of trying to answer broad questions, break them down into more manageable queries.</li>
+                <li>**Use diverse sources**: Rely on a combination of official documentation, blogs, forums, and Q&A sites like Stack Overflow.</li>
+                <li>**Follow a logical sequence**: Start with a general search to gain an overview, then explore specific tools, commands, or techniques as needed.</li>
+            </ul>
+        
+            <h2 id="resources">Resources</h2>
+            <p>These are some of the resources I frequently used during my research:</p>
+            <ul>
+                <li><strong>Google</strong>: For general searches and quick answers.</li>
+                <li><strong>Official Documentation</strong>: Always check the official documentation for tools and systems you are researching. For example, Ubuntu documentation was essential for learning about apt.</li>
+                <li><strong>TryHackMe Modules</strong>: Helpful for hands-on learning and practicing specific hacking techniques.</li>
+            </ul>
+        
+            <h2 id="research-methodology">Research Methodology</h2>
+            <p>Here’s a simple methodology I follow for effective research:</p>
+            <ol>
+                <li><strong>Start with a question</strong>: Identify the problem or topic you need to explore.</li>
+                <li><strong>Build a basic understanding</strong>: Conduct general research to get an overview of the subject.</li>
+                <li><strong>Explore more advanced topics as needed</strong>: Once you have the basics, dive deeper into specifics, whether it’s about a tool, technique, or concept.</li>
+            </ol>
+        </div>
+        
+
+</body>
+</html>
