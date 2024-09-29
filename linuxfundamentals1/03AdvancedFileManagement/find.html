@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 1 - find command</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        // Ensure that the correct submenu is expanded on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('file-management'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('basic-commands')">Basic Commands (echo, whoami, >, >>)</a>
+                    <ul id="basic-commands" class="nested-list">
+                        <li><a href="../01BasicCommands/echo.html">echo</a></li>
+                        <li><a href="../01BasicCommands/whoami.html">whoami</a></li>
+                        <li><a href="../01BasicCommands/redirection.html">Output Redirection</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('filesystem')">Interacting with the Filesystem (ls, cd, cat, pwd)</a>
+                    <ul id="filesystem" class="nested-list">
+                        <li><a href="../02InteractingFileSystem/ls.html">ls</a></li>
+                        <li><a href="../02InteractingFileSystem/cd.html">cd</a></li>
+                        <li><a href="../02InteractingFileSystem/cat.html">cat</a></li>
+                        <li><a href="../02InteractingFileSystem/pwd.html">pwd</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-management')">Advanced File Management (find, grep)</a>
+                    <ul id="file-management" class="nested-list">
+                        <li><a href="find.html" class="active-link">find</a></li>
+                        <li><a href="grep.html">grep</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('shell-operators')">Shell Operators (&, &&, >, >>, |)</a>
+                    <ul id="shell-operators" class="nested-list">
+                        <li><a href="../04ShellCommands/backgrounding.html">Backgrounding &</a></li>
+                        <li><a href="../04ShellCommands/command-chaining.html">Command Chaining &&</a></li>
+                        <li><a href="../04ShellCommands/output-redirection.html">Output Redirection >, >></a></li>
+                        <li><a href="../04ShellCommands/pipe.html">Pipe |</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Advanced File Management: Understanding the find Command</h1>
+            <p>The <code>find</code> command is used to search for files and directories in a directory hierarchy based on specific criteria such as name, type, size, and modification date.</p>
+            <h2>Usage:</h2>
+            <p><code>find</code> is commonly used to locate files or directories based on their name or type.</p>
+            <h2>Examples:</h2>
+            <ul>
+                <li><code>find /tmp -name "*.log"</code> - Finds all log files in the <code>/tmp</code> directory.</li>
+                <li><code>find /home/user -name "report.txt"</code> - Searches for <code>report.txt</code> starting from the user's home directory.</li>
+            </ul>
+            <h3>Scenario 5: Finding Log Files</h3>
+            <p><strong>Task:</strong> You want to find all <code>.log</code> files in the <code>/tmp/system_logs</code> directory.</p>
+            <p><strong>Command:</strong> <code>find /tmp/system_logs -name "*.log"</code></p>
+            <p><strong>Example Output:</strong></p>
+            <ul>
+                <li>/tmp/system_logs/error.log</li>
+                <li>/tmp/system_logs/access.log</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

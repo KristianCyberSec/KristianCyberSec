@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 2 - chown Command</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Example: bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        // Ensure that the correct submenu is expanded on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('user-switch'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('remote-access')">SSH and Remote Access</a>
+                    <ul id="remote-access" class="nested-list">
+                        <li><a href="../01RemoteAccess/ssh.html">ssh</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('flags-man')">Flags and Manual Pages</a>
+                    <ul id="flags-man" class="nested-list">
+                        <li><a href="../02FlagsManualPages/flags.html">Flags</a></li>
+                        <li><a href="../02FlagsManualPages/man.html">man</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-ops')">File and Directory Operations</a>
+                    <ul id="file-ops" class="nested-list">
+                        <li><a href="../03FileOperations/touch.html">touch</a></li>
+                        <li><a href="../03FileOperations/mkdir.html">mkdir</a></li>
+                        <li><a href="../03FileOperations/rm.html">rm</a></li>
+                        <li><a href="../03FileOperations/cp.html">cp</a></li>
+                        <li><a href="../03FileOperations/mv.html">mv</a></li>
+                        <li><a href="../03FileOperations/file.html">file</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('user-switch')">Switching Users and Permissions</a>
+                    <ul id="user-switch" class="nested-list">
+                        <li><a href="su.html">su</a></li>
+                        <li><a href="chmod.html">chmod</a></li>
+                        <li><a href="chown.html" class="active-link">chown</a></li>
+                        <li><a href="ls-l.html">ls -l</a></li> <!-- Added missing ls -l link -->
+                    </ul>
+                    
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('important-dirs')">Important Directories</a>
+                    <ul id="important-dirs" class="nested-list">
+                        <li><a href="../05ImportantDirectories/etc.html">/etc</a></li>
+                        <li><a href="../05ImportantDirectories/var.html">/var</a></li>
+                        <li><a href="../05ImportantDirectories/root.html">/root</a></li>
+                        <li><a href="../05ImportantDirectories/tmp.html">/tmp</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Using the chown Command</h1>
+            <p>The <code>chown</code> command in Linux allows you to change the owner and group of a file or directory. It's useful when you need to reassign file ownership between users or groups.</p>
+            <h2>Examples</h2>
+            <p><code>chown user:developers project.txt</code> - This command changes the owner of <code>project.txt</code> to the user <code>user</code> and the group to <code>developers</code>.</p>
+
+            <h2>Scenario 17: Changing Ownership of a File</h2>
+            <p><strong>Task:</strong> You need to change the owner of the file <code>report.pdf</code> to <code>user2</code>.</p>
+            <p><strong>Command:</strong> <code>chown user2 /home/user/report.pdf</code></p>
+            <p><strong>Next Step:</strong> Use <code>ls -l</code> to verify that the file ownership has changed.</p>
+
+            <h2>Explanation of chown Syntax</h2>
+            <p>The <code>chown</code> command has the following general format:</p>
+            <p><code>chown [owner][:group] file</code></p>
+
+            <p>For example:</p>
+            <p><code>chown alice:users data.txt</code> - Changes the owner to <code>alice</code> and the group to <code>users</code>.</p>
+            <p><code>chown bob data.txt</code> - Changes the owner to <code>bob</code>, but leaves the group unchanged.</p>
+
+            <h2>Important Note</h2>
+            <p>Only the root user or a user with elevated permissions (via <code>sudo</code>) can change the ownership of files or directories using <code>chown</code>.</p>
+        </div>
+    </div>
+</body>
+</html>

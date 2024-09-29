@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 3</title>
+    <link rel="stylesheet" href="../styles_topic.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../achievements.html">Achievements</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../books.html">Books I've Read</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('text-editors')">Terminal Text Editors</a>
+                    <ul id="text-editors" class="nested-list">
+                        <li><a href="01TextEditors/nano.html">Nano</a></li> <!-- Links to 01TextEditors -->
+                        <li><a href="01TextEditors/vim.html">Vim</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('downloading-files')">Downloading Files</a>
+                    <ul id="downloading-files" class="nested-list">
+                        <li><a href="02DownloadingFiles/wget.html">Wget</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('secure-copy')">Secure Copy</a>
+                    <ul id="secure-copy" class="nested-list">
+                        <li><a href="03SecureCopy/scp.html">SCP</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('python-http')">Serving Files with Python</a>
+                    <ul id="python-http" class="nested-list">
+                        <li><a href="04PythonHttpServer/python-httpserver.html">Python HTTP Server</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('process-management')">Managing Processes</a>
+                    <ul id="process-management" class="nested-list">
+                        <li><a href="05ManagingProcesses/ps.html">ps</a></li>
+                        <li><a href="05ManagingProcesses/top.html">top</a></li>
+                        <li><a href="05ManagingProcesses/kill.html">kill</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('systemd-crontabs')">Systemd and Crontabs</a>
+                    <ul id="systemd-crontabs" class="nested-list">
+                        <li><a href="06SystemdCrontabs/systemctl.html">systemctl</a></li>
+                        <li><a href="06SystemdCrontabs/crontab.html">crontab</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('packages-repos')">Packages and Repositories</a>
+                    <ul id="packages-repos" class="nested-list">
+                        <li><a href="07PackagesRepositories/apt.html">apt</a></li>
+                        <li><a href="07PackagesRepositories/add-apt-repository.html">add-apt-repository</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('log-files')">Log Files</a>
+                    <ul id="log-files" class="nested-list">
+                        <li><a href="08LogFiles/review-logs.html">Review Logs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="back-button" onclick="window.location.href='../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Linux Fundamentals 3 - Commands with Real-World Scenarios</h1>
+            <p>In Linux Fundamentals 3, we dive into text editors, downloading and transferring files, managing processes, and working with services and scheduled tasks. Below is a summary of key commands:</p>
+            <p><strong>Terminal Text Editors (Nano and Vim):</strong> Learn how to use simple and advanced text editors for modifying files directly from the terminal.</p>
+            <p><strong>Downloading Files (Wget):</strong> Use <code>wget</code> to download files over HTTP or HTTPS.</p>
+            <p><strong>Secure File Transfer (SCP):</strong> Securely transfer files between machines using <code>scp</code>.</p>
+            <p><strong>Serving Files (Python HTTP Server):</strong> Set up a temporary web server to serve files with <code>python3 -m http.server</code>.</p>
+            <p><strong>Managing Processes:</strong> View and manage running processes using <code>ps</code>, <code>top</code>, and <code>kill</code>.</p>
+            <p><strong>Systemd and Crontabs:</strong> Manage system services and automate tasks with <code>systemctl</code> and <code>crontab</code>.</p>
+            <p><strong>Packages and Repositories:</strong> Install and manage software packages using <code>apt</code> and add repositories with <code>add-apt-repository</code>.</p>
+            <p><strong>Log Files:</strong> Monitor and review log files to troubleshoot and ensure system integrity.</p>
+        </div>
+    </div>
+</body>
+</html>

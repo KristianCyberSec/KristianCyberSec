@@ -1,0 +1,56 @@
+/* Adjust layout */
+.main-content-study {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+/* Fix the sidebar width */
+.sidebar {
+    width: 20%;
+    padding: 20px;
+}
+
+/* Styling the code blocks */
+.main-content-study code {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 90%;
+}
+
+/* Styling for headings */
+.main-content-study h1,
+.main-content-study h2 {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Ensure the overall page looks balanced */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+.study-notes-content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-left: 220px; /* Adjust this value to match the width of your sidebar */
+    border-radius: 8px;
+    color: #333;
+    width: calc(100% - 240px); /* Adjust width to prevent hiding behind the sidebar */
+    box-sizing: border-box; /* Include padding and border in the width */
+}

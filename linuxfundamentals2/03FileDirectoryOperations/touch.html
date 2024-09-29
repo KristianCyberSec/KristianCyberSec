@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 2 - touch command</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px;
+        }
+        .main-content code {
+            font-size: 28px;
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('file-ops'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('remote-access')">SSH and Remote Access</a>
+                    <ul id="remote-access" class="nested-list">
+                        <li><a href="../01RemoteAccess/ssh.html">ssh</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('flags-man')">Flags and Manual Pages</a>
+                    <ul id="flags-man" class="nested-list">
+                        <li><a href="../02FlagsManualPages/flags.html">Flags</a></li>
+                        <li><a href="../02FlagsManualPages/man.html">man</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-ops')">File and Directory Operations</a>
+                    <ul id="file-ops" class="nested-list">
+                        <li><a href="touch.html" class="active-link">touch</a></li>
+                        <li><a href="mkdir.html">mkdir</a></li>
+                        <li><a href="rm.html">rm</a></li>
+                        <li><a href="cp.html">cp</a></li>
+                        <li><a href="mv.html">mv</a></li>
+                        <li><a href="file.html">file</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('user-switch')">Switching Users and Permissions</a>
+                    <ul id="user-switch" class="nested-list">
+                        <li><a href="../04SwitchingUsersPermissions/su.html">su</a></li>
+                        <li><a href="../04SwitchingUsersPermissions/chmod.html">chmod</a></li>
+                        <li><a href="../04SwitchingUsersPermissions/chown.html">chown</a></li>
+                        <li><a href="../04SwitchingUsersPermissions/ls-l.html">ls -l</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('important-dirs')">Important Directories</a>
+                    <ul id="important-dirs" class="nested-list">
+                        <li><a href="../05ImportantDirectories/etc.html">/etc</a></li>
+                        <li><a href="../05ImportantDirectories/var.html">/var</a></li>
+                        <li><a href="../05ImportantDirectories/root.html">/root</a></li>
+                        <li><a href="../05ImportantDirectories/tmp.html">/tmp</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Using the touch Command</h1>
+            <p>The <code>touch</code> command in Linux is used to create empty files. It can also be used to update the timestamp of existing files.</p>
+            <h2>Examples</h2>
+            <p><code>touch myfile.txt</code> - This command creates a new, empty file called <code>myfile.txt</code>.</p>
+            <h2>Scenario 4: Creating Files</h2>
+            <p><strong>Task:</strong> You need to create a file named <code>logfile.txt</code> in the <code>/tmp</code> directory.</p>
+            <p><strong>Command:</strong> <code>touch /tmp/logfile.txt</code></p>
+            <p><strong>Next Step:</strong> Use <code>ls /tmp</code> to verify the file has been created.</p>
+        </div>
+    </div>
+</body>
+</html>

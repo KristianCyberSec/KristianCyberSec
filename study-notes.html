@@ -3,30 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Study Notes</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Specific styles for study-notes.html links */
-        #tryhackme-container a {
-            color: limegreen; /* Set link color */
-        }
-
-        #tryhackme-container a:visited {
-            color: limegreen; /* Keep visited links green */
-        }
-
-        #tryhackme-container a:hover {
-            color: limegreen; /* Keep hover links green */
-        }
-
-        #tryhackme-container a:active {
-            color: limegreen; /* Keep active links green */
-        }
-    </style>
-    <script src="scripts/firebase-auth.js"></script>
+    <title>Study Notes</title>
+    <link rel="stylesheet" href="styles_topic.css"> <!-- New CSS file for these topic-specific pages -->
+    <link rel="stylesheet" href="styles.css"> <!-- Also include styles from homepage for top nav and effects -->
 </head>
 <body>
-    <!-- Navigation Menu -->
+    <!-- Top Navigation Menu (Same as Homepage) -->
     <header>
         <nav>
             <ul>
@@ -42,55 +24,26 @@
         </nav>
     </header>
 
-    <!-- Burger Menu for Topics -->
-    <div class="burger-menu">
-        <div class="burger-icon" onclick="toggleMenu()">☰</div>
-        <div id="topics-menu" class="topics-menu">
+    <!-- Flexbox container for sidebar and main content -->
+    <div class="content-container">
+        <!-- Sidebar Navigation for Specific Topic Sections -->
+        <div class="sidebar">
+            <h2>Study Notes</h2>
             <ul>
-                <li><a href="researching.html">Research</a></li>
-                <li><a href="vulnerabilitytesting.html">Vulnerability Searching</a></li>
-                <li><a href="manualpages.html">Linux Manual Pages</a></li>
+                <li><a href="linuxfundamentals1/linux1.html">Linux Fundamentals 1</a></li>
+                <li><a href="linuxfundamentals2/linux2.html">Linux Fundamentals 2</a></li>
+                <li><a href="linuxfundamentals3/linux3.html">Linux Fundamentals 3</a></li>
             </ul>
+            <!-- Back Button -->
+            <button class="back-button" onclick="history.back()">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Welcome to Study Notes</h1>
+            <p>Explore the comprehensive guide to understanding Linux through our structured fundamentals courses. Begin with Linux Fundamentals 1 and progress through to more advanced topics covered in Linux Fundamentals 3.</p>
         </div>
     </div>
-
-    <!-- Personal Study Notes Header -->
-    <div id="tryhackme-header">
-        <h1>Personal Study Notes</h1>
-        <p>These are my personal notes documenting various topics I've learned in cybersecurity.</p>
-    </div>
-
-    <!-- Topics Section -->
-    <div id="tryhackme-container">
-        <div class="topic" id="research">
-            <h2><a href="researching.html">Research</a></h2>
-            <p>Research is a critical skill in hacking. Learn how to Google efficiently to stay updated and find solutions to technical problems.</p>
-        </div>
-
-        <div class="topic" id="vulnerability-searching">
-            <h2><a href="vulnerabilitytesting.html">Vulnerability Searching</a></h2>
-            <p>Identify and search for vulnerabilities in software and websites using various databases like ExploitDB, NVD, and Searchsploit.</p>
-        </div>
-
-        <div class="topic" id="linux-manual-pages">
-            <h2><a href="manualpages.html">Linux Manual Pages</a></h2>
-            <p>Use the <code>man</code> command to access manuals and learn tool syntax, switches, and more.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>Check out my <a href="https://github.com/YourGitHubProfile">GitHub Profile</a></p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("topics-menu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
+

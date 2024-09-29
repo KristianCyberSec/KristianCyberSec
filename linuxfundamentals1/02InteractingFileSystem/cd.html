@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 1 - cd command</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Example: bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        // Ensure that the correct submenu is expanded on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('filesystem'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('basic-commands')">Basic Commands (echo, whoami, >, >>)</a>
+                    <ul id="basic-commands" class="nested-list">
+                        <li><a href="../01BasicCommands/echo.html">echo</a></li>
+                        <li><a href="../01BasicCommands/whoami.html">whoami</a></li>
+                        <li><a href="../01BasicCommands/redirection.html">Output Redirection</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('filesystem')">Interacting with the Filesystem (ls, cd, cat, pwd)</a>
+                    <ul id="filesystem" class="nested-list">
+                        <li><a href="ls.html">ls</a></li>
+                        <li><a href="cd.html" class="active-link">cd</a></li>
+                        <li><a href="cat.html">cat</a></li>
+                        <li><a href="pwd.html">pwd</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-management')">Advanced File Management (find, grep)</a>
+                    <ul id="file-management" class="nested-list">
+                        <li><a href="../03AdvancedFileManagement/find.html">find</a></li>
+                        <li><a href="../03AdvancedFileManagement/grep.html">grep</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('shell-operators')">Shell Operators (&, &&, >, >>, |)</a>
+                    <ul id="shell-operators" class="nested-list">
+                        <li><a href="../04ShellCommands/backgrounding.html">Backgrounding &</a></li>
+                        <li><a href="../04ShellCommands/command-chaining.html">Command Chaining &&</a></li>
+                        <li><a href="../04ShellCommands/output-redirection.html">Output Redirection >, >></a></li>
+                        <li><a href="../04ShellCommands/pipe.html">Pipe |</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Understanding the cd Command</h1>
+            <p>The <code>cd</code> command, short for "change directory," is used to move between directories in a Linux filesystem.</p>
+            <h2>Usage:</h2>
+            <ul>
+                <li><code>cd [directory]</code> - Changes to the specified directory.</li>
+                <li><code>cd ..</code> - Moves up one directory level (to the parent directory).</li>
+                <li><code>cd ~</code> - Moves to the home directory.</li>
+            </ul>
+            <h2>Example Usage</h2>
+            <p><code>cd /home/user/Documents</code> - This command navigates to the "Documents" directory located within the user's home directory.</p>
+            <p><code>cd ..</code> - This command moves one level up from the current directory.</p>
+            <h2>Real-world Application</h2>
+            <p>The <code>cd</code> command is essential for navigating and managing files in different directories, particularly for developers, system administrators, and users who need to work within various locations of the filesystem.</p>
+        </div>
+    </div>
+</body>
+</html>

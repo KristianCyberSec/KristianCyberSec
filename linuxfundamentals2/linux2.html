@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 2</title>
+    <link rel="stylesheet" href="../styles_topic.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../achievements.html">Achievements</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../books.html">Books I've Read</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('remote-access')">SSH and Remote Access</a>
+                    <ul id="remote-access" class="nested-list">
+                        <li><a href="01RemoteAccess/ssh.html">ssh</a></li> <!-- Points to the 01SSHRemoteAccess subfolder -->
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('flags-man')">Flags and Manual Pages</a>
+                    <ul id="flags-man" class="nested-list">
+                        <li><a href="02FlagsManualPages/flags.html">Flags</a></li> <!-- Points to the 02FlagsManualPages subfolder -->
+                        <li><a href="02FlagsManualPages/man.html">man</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-ops')">File and Directory Operations</a>
+                    <ul id="file-ops" class="nested-list">
+                        <li><a href="03FileDirectoryOperations/touch.html">touch</a></li>
+                        <li><a href="03FileDirectoryOperations/mkdir.html">mkdir</a></li>
+                        <li><a href="03FileDirectoryOperations/rm.html">rm</a></li>
+                        <li><a href="03FileDirectoryOperations/cp.html">cp</a></li>
+                        <li><a href="03FileDirectoryOperations/mv.html">mv</a></li>
+                        <li><a href="03FileDirectoryOperations/file.html">file</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('user-switch')">Switching Users and Permissions</a>
+                    <ul id="user-switch" class="nested-list">
+                        <li><a href="04SwitchingUserPermissions/su.html">su</a></li>
+                        <li><a href="04SwitchingUserPermissions/chmod.html">chmod</a></li>
+                        <li><a href="04SwitchingUserPermissions/chown.html">chown</a></li>
+                        <li><a href="04SwitchingUserPermissions/ls-l.html">ls -l</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('important-dirs')">Important Directories</a>
+                    <ul id="important-dirs" class="nested-list">
+                        <li><a href="05ImportantDirectories/etc.html">/etc</a></li>
+                        <li><a href="05ImportantDirectories/var.html">/var</a></li>
+                        <li><a href="05ImportantDirectories/root.html">/root</a></li>
+                        <li><a href="05ImportantDirectories/tmp.html">/tmp</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <button class="back-button" onclick="window.location.href='../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Linux Fundamentals 2 - Commands with Real-World Scenarios</h1>
+            <p>In Linux Fundamentals 2, the focus shifts toward using SSH for remote access, learning how to use flags, creating/moving/deleting files, switching users, and understanding important system directories.</p>
+            <p><strong>SSH (ssh):</strong> Connect to remote Linux systems securely.</p>
+            <p><strong>Flags:</strong> Modify command behavior (e.g., <code>ls -a</code> to show hidden files).</p>
+            <p><strong>Manual Pages (man):</strong> Learn more about commands with <code>man &lt;command&gt;</code>.</p>
+            <p><strong>File Creation and Management (touch, mkdir, rm, cp, mv, file):</strong> Commands for creating, copying, moving, and removing files and directories.</p>
+            <p><strong>Permissions (chmod, chown):</strong> Adjust file permissions and ownership.</p>
+            <p><strong>Switching Users (su, sudo):</strong> Switch between users or run commands with elevated privileges.</p>
+            <p><strong>Important Directories:</strong></p>
+            <p><code>/etc:</code> System configuration.</p>
+            <p><code>/var:</code> Variable data like logs.</p>
+            <p><code>/tmp:</code> Temporary files.</p>
+            <p><code>/root:</code> Root user's home directory.</p>
+        </div>
+    </div>
+</body>
+</html>

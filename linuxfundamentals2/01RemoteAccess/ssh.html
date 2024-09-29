@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 2 - SSH</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        // Ensure that the correct submenu is expanded on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('remote-access'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('remote-access')">SSH and Remote Access</a>
+                    <ul id="remote-access" class="nested-list">
+                        <li><a href="ssh.html" class="active-link">ssh</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('flags-man')">Flags and Manual Pages</a>
+                    <ul id="flags-man" class="nested-list">
+                        <li><a href="../02FlagsManualPages/flags.html">Flags</a></li> <!-- Updated link to flags -->
+                        <li><a href="../02FlagsManualPages/man.html">man</a></li> <!-- Updated link to man -->
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-ops')">File and Directory Operations</a>
+                    <ul id="file-ops" class="nested-list">
+                        <li><a href="../03FileDirectoryOperations/touch.html">touch</a></li> <!-- Updated link to touch -->
+                        <li><a href="../03FileDirectoryOperations/mkdir.html">mkdir</a></li> <!-- Updated link to mkdir -->
+                        <li><a href="../03FileDirectoryOperations/rm.html">rm</a></li> <!-- Updated link to rm -->
+                        <li><a href="../03FileDirectoryOperations/cp.html">cp</a></li> <!-- Updated link to cp -->
+                        <li><a href="../03FileDirectoryOperations/mv.html">mv</a></li> <!-- Updated link to mv -->
+                        <li><a href="../03FileDirectoryOperations/file.html">file</a></li> <!-- Updated link to file -->
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('user-switch')">Switching Users and Permissions</a>
+                    <ul id="user-switch" class="nested-list">
+                        <li><a href="../04SwitchingUsersPermissions/su.html">su</a></li> <!-- Updated link to su -->
+                        <li><a href="../04SwitchingUsersPermissions/chmod.html">chmod</a></li> <!-- Updated link to chmod -->
+                        <li><a href="../04SwitchingUsersPermissions/chown.html">chown</a></li> <!-- Updated link to chown -->
+                        <li><a href="../04SwitchingUsersPermissions/ls-l.html">ls -l</a></li> <!-- Updated link to ls -l -->
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('important-dirs')">Important Directories</a>
+                    <ul id="important-dirs" class="nested-list">
+                        <li><a href="../05ImportantDirectories/etc.html">/etc</a></li> <!-- Updated link to /etc -->
+                        <li><a href="../05ImportantDirectories/var.html">/var</a></li> <!-- Updated link to /var -->
+                        <li><a href="../05ImportantDirectories/root.html">/root</a></li> <!-- Updated link to /root -->
+                        <li><a href="../05ImportantDirectories/tmp.html">/tmp</a></li> <!-- Updated link to /tmp -->
+                    </ul>
+                </li>
+            </ul>
+            
+
+            <!-- Back Button -->
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Understanding SSH (Secure Shell)</h1>
+            <p>The <code>ssh</code> command is used to securely log into remote Linux systems, allowing for secure data transfer and remote command execution.</p>
+            <h2>Usage:</h2>
+            <p><code>ssh username@IP_address</code></p>
+            <h2>Example:</h2>
+            <p><code>ssh tryhackme@10.10.10.10</code> - This logs into the remote machine at <code>10.10.10.10</code> using the username "tryhackme".</p>
+            <h2>Explanation:</h2>
+            <p>SSH establishes a secure connection between your local machine and the remote system, encrypting data transferred between the two systems. This is commonly used to access servers and remote machines securely.</p>
+            <h3>Scenario 1: Connecting to a Remote Machine</h3>
+            <p><strong>Task:</strong> You need to log into a remote Linux machine using SSH with the credentials provided.</p>
+            <p><strong>Command:</strong> <code>ssh tryhackme@&lt;MACHINE_IP&gt;</code></p>
+            <p><strong>Next Step:</strong> Once connected, you will be able to run commands on the remote system as if you were physically using it.</p>
+        </div>
+    </div>
+</body>
+</html>

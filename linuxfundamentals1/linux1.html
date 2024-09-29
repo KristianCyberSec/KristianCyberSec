@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 1</title>
+    <link rel="stylesheet" href="../styles_topic.css"> <!-- New CSS file for these topic-specific pages -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Also include styles from homepage for top nav and effects -->
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === 'block') {
+                element.style.display = 'none';
+            } else {
+                element.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu (Same as Homepage) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../achievements.html">Achievements</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../books.html">Books I've Read</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../cyber-news.html">Cybersecurity News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flexbox container for sidebar and main content -->
+    <div class="content-container">
+        <!-- Sidebar Navigation for Specific Topic Sections -->
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('basic-commands')">Basic Commands (echo, whoami, >, >>)</a>
+                    <ul id="basic-commands" class="nested-list">
+                        <li><a href="01BasicCommands/echo.html">echo</a></li>
+                        <li><a href="01BasicCommands/whoami.html">whoami</a></li>
+                        <li><a href="01BasicCommands/redirection.html">Output Redirection</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('filesystem')">Interacting with the Filesystem (ls, cd, cat, pwd)</a>
+                    <ul id="filesystem" class="nested-list">
+                        <li><a href="02InteractingFileSystem/ls.html">ls</a></li>
+                        <li><a href="02InteractingFileSystem/cd.html">cd</a></li>
+                        <li><a href="02InteractingFileSystem/cat.html">cat</a></li>
+                        <li><a href="02InteractingFileSystem/pwd.html">pwd</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('file-management')">Advanced File Management (find, grep)</a>
+                    <ul id="file-management" class="nested-list">
+                        <li><a href="03AdvancedFileManagement/find.html">find</a></li>
+                        <li><a href="03AdvancedFileManagement/grep.html">grep</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('shell-operators')">Shell Operators (&, &&, >, >>, |)</a>
+                    <ul id="shell-operators" class="nested-list">
+                        <li><a href="04ShellCommands/backgrounding.html">Backgrounding &</a></li>
+                        <li><a href="04ShellCommands/command-chaining.html">Command Chaining &&</a></li>
+                        <li><a href="04ShellCommands/output-redirection.html">Output Redirection >, >></a></li>
+                        <li><a href="04ShellCommands/pipe.html">Pipe |</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <!-- Back Button -->
+            <button class="back-button" onclick="window.location.href='../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Linux Command Overview</h1>
+            <p>------------------------------------------------The following is a list of common Linux commands and their descriptions:------------------------------------------------</p>
+            <p><strong>ls | grep:</strong> Searching for files or directories by name.</p>
+            <p><strong>cd:</strong> Navigating between directories.</p>
+            <p><strong>cat:</strong> Viewing the contents of files.</p>
+            <p><strong>pwd:</strong> Finding your current location in the file system.</p>
+            <p><strong>find:</strong> Locating files with specific names or extensions.</p>
+            <p><strong>grep:</strong> Searching for specific text within files.</p>
+            <p><strong>&:</strong> Running long tasks in the background.</p>
+            <p><strong>&&:</strong> Chaining commands together.</p>
+            <p><strong>></strong> and <strong>>></strong>: Redirecting or appending output to files.</p>
+            <p><strong>|:</strong> Piping output from one command to another.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -569,4 +569,25 @@ footer a:hover {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+/* Ensure all text inside main-content has the same size on Study Notes pages */
+.study-notes .main-content p, 
+.study-notes .main-content ul, 
+.study-notes .main-content li {
+    font-size: 16px; /* Adjust size as needed */
+    color: #333; /* Standard text color */
+}
+
+/* Specific styles for code segments on Study Notes pages */
+.study-notes code {
+    background-color: #f4f4f4; /* Light grey background */
+    color: #D6336C; /* Some shade of red for code */
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace; /* Ensures code stands out */
+}
+
+/* Additional styling for command line examples on Study Notes pages */
+.study-notes .command {
+    color: #0074D9; /* Blue color for command text */
+}
 

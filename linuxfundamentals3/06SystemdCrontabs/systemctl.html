@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes: Linux Fundamentals 3 - systemctl</title>
+    <link rel="stylesheet" href="../../styles_topic.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .dropdown-link:before {
+            content: '▼ ';
+            font-size: smaller;
+        }
+        .active-link {
+            background-color: #404040;
+            color: #fff;
+        }
+        .dropdown-link {
+            cursor: pointer;
+        }
+        .nested-list > li > a {
+            display: block;
+            padding: 8px;
+        }
+        .main-content code {
+            color: #c7254e; /* Bright red for visibility */
+            background-color: #f9f2f4; /* Light background for the code elements */
+            padding: 2px 4px;
+            font-size: 110%;
+            border-radius: 4px;
+        }
+        .main-content {
+            font-size: 28px; /* Adjusts the font size of the content */
+        }
+        .main-content code {
+            font-size: 28px; /* Keeps code slightly smaller than the regular text */
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            var elements = document.getElementsByClassName('nested-list');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].id === id) {
+                    elements[i].style.display = (elements[i].style.display === 'block' ? 'none' : 'block');
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleDropdown('systemd-crontabs'); // Adjust according to the page
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../study-notes.html">Personal Study Notes</a></li>
+                <li><a href="../../achievements.html">Achievements</a></li>
+                <li><a href="../../resume.html">Resume</a></li>
+                <li><a href="../../books.html">Books I've Read</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../cyber-news.html">Cybersecurity News</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Sidebar and Main Content Container -->
+    <div class="content-container">
+        <div class="sidebar">
+            <h2>Study Notes</h2>
+            <ul>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('text-editors')">Terminal Text Editors</a>
+                    <ul id="text-editors" class="nested-list">
+                        <li><a href="../01TextEditors/nano.html">Nano</a></li>
+                        <li><a href="../01TextEditors/vim.html">Vim</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('downloading-files')">Downloading Files</a>
+                    <ul id="downloading-files" class="nested-list">
+                        <li><a href="../02DownloadingFiles/wget.html">Wget</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('secure-copy')">Secure Copy</a>
+                    <ul id="secure-copy" class="nested-list">
+                        <li><a href="../03SecureCopy/scp.html">SCP</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('python-http')">Serving Files with Python</a>
+                    <ul id="python-http" class="nested-list">
+                        <li><a href="../04PythonHttpServer/python-httpserver.html">Python HTTP Server</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('process-management')">Managing Processes</a>
+                    <ul id="process-management" class="nested-list">
+                        <li><a href="../05ManagingProcesses/ps.html">ps</a></li>
+                        <li><a href="../05ManagingProcesses/top.html">top</a></li>
+                        <li><a href="../05ManagingProcesses/kill.html">kill</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('systemd-crontabs')">Systemd and Crontabs</a>
+                    <ul id="systemd-crontabs" class="nested-list">
+                        <li><a href="systemctl.html" class="active-link">systemctl</a></li>
+                        <li><a href="crontab.html">crontab</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('packages-repos')">Packages and Repositories</a>
+                    <ul id="packages-repos" class="nested-list">
+                        <li><a href="../07PackagesRepositories/apt.html">apt</a></li>
+                        <li><a href="../07PackagesRepositories/add-apt-repository.html">add-apt-repository</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-link" onclick="toggleDropdown('log-files')">Log Files</a>
+                    <ul id="log-files" class="nested-list">
+                        <li><a href="../08LogFiles/review-logs.html">Review Logs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Back Button -->
+            <button class="back-button" onclick="window.location.href='../../study-notes.html'">← Back</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Using the systemctl Command</h1>
+            <p>The <code>systemctl</code> command is used to manage services on Linux systems that use systemd. You can start, stop, enable, or disable services using this command.</p>
+            <h2>Example:</h2>
+            <p><code>systemctl start apache2</code> - This starts the Apache web server.</p>
+            <h2>Scenario 9: Enabling a Web Server to Start on Boot</h2>
+            <p><strong>Task:</strong> Ensure the Apache web server starts automatically when the system boots.</p>
+            <p><strong>Command:</strong> <code>systemctl enable apache2</code></p>
+            <p><strong>Next Step:</strong> You can manually start or stop the service with <code>systemctl start apache2</code> or <code>systemctl stop apache2</code>.</p>
+        </div>
+    </div>
+</body>
+</html>
